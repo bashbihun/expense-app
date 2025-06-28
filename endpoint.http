@@ -1,0 +1,16 @@
+# post 
+###
+POST http://localhost:8080/api/expense
+Content-Type: application/json
+
+{
+    "title":"es teh",
+    "amount": 5000,
+    "category": "minuman",
+    "date": "2025-06-28"
+}
+
+
+# get all
+###
+GET http://localhost:8080/api/expense

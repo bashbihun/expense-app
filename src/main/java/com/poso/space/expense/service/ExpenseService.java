@@ -1,5 +1,7 @@
 package com.poso.space.expense.service;
 
+import java.util.List;
+
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
@@ -19,5 +21,9 @@ public class ExpenseService {
         Expense expense = new Expense();
         BeanUtils.copyProperties(expenseDTO, expense);
         return expenseRepository.save(expense);
+    }
+
+    public List<Expense> getAllExpense() {
+        return expenseRepository.findAll();
     }
 }
