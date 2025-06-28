@@ -31,3 +31,7 @@ Content-Type: application/json
   "category": "minuman dan makanan",
   "date": "2025-06-27"
 }
+
+# delete
+###
+DELETE http://localhost:8080/api/expense/1

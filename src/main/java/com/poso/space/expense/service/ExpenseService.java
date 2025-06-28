@@ -44,4 +44,10 @@ public class ExpenseService {
         existing.setDate(expenseDTO.getDate());
         return expenseRepository.save(existing);
     }
+
+    public void deleteExpense(Long id) {
+        Expense expense = expenseRepository.findById(id)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "not found"));
+        expenseRepository.delete(expense);
+    }
 }
