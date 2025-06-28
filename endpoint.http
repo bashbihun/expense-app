@@ -18,4 +18,16 @@ GET http://localhost:8080/api/expense
 
 # get by id
 ###
-GET http://localhost:8080/api/expense/3
+GET http://localhost:8080/api/expense/1
+
+# update
+###
+PUT http://localhost:8080/api/expense/1
+Content-Type: application/json
+
+{
+  "title": "Beli kopi dan roti",
+  "amount": 20000,
+  "category": "minuman dan makanan",
+  "date": "2025-06-27"
+}

@@ -33,4 +33,15 @@ public class ExpenseService {
         return expenseRepository.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "not found"));
     }
+
+    public Expense updateExpense(Long id, ExpenseDTO expenseDTO) {
+        Expense existing = expenseRepository.findById(id)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "not found"));
+
+        existing.setTitle(expenseDTO.getTitle());
+        existing.setAmount(expenseDTO.getAmount());
+        existing.setCategory(expenseDTO.getCategory());
+        existing.setDate(expenseDTO.getDate());
+        return expenseRepository.save(existing);
+    }
 }
